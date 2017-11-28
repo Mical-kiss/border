@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<style>
-			.px1{
+			.a1:after {
+				content: '';
+				display: block;
+				border-top: 1px solid #000;
+			}
+			
+			.px1 {
 				border-bottom: 1px solid #000;
 			}
-			.px2{
+			
+			.px2 {
 				border-top: 2px solid #000;
+			}
+			
+			@media (-webkit-min-device-pixel-ratio: 1.5),
+			(min-device-pixel-ratio: 1.5) {
+				.border-1px:after {
+						-webkit-transform: scaleY(0.7);
+						transform: scaleY(0.7);
+					
+				}
+			}
+			
+			@media (-webkit-min-device-pixel-ratio: 2),
+			(min-device-pixel-ratio: 2) {
+				.border-1px:after {
+						-webkit-transform: scaleY(0.5);
+						transform: scaleY(0.5);
+					}
 			}
 		</style>
 	</head>
+
 	<body>
+		<div class="a1 border-1px">
+			小
+		</div>
 		<div class="px1">
 			1像素边框
 		</div>
@@ -22,4 +51,5 @@
 			2像素边框
 		</div>
 	</body>
+
 </html>
