@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+		<meta charset="UTF-8">
+<html>
+
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<input type="number" max="2019" min="1900" name="z" id="zzz" value="" placeholder="1900-2019" style="width: 100px;"/>年
+		<input type="number" max="12" min="1" name="y" id="yyy" value="" placeholder="1-12"/>月		
+		<input type="number" max="31" min="1" name="x" id="xxx" value="" placeholder="1-31"/>日
+		<input type="button" name="" id="time" value="提交"  />
+		
+		<script type="text/javascript">
+			var oDate = new Date();
+			var day = oDate.getDate();
+			var month = oDate.getMonth();
+			var year = oDate.getFullYear();
+			
+			time.onclick=function(){
+			var z=zzz.value;
+			var y=yyy.value;
+			var x=xxx.value;
+			var d=0;
+			var b=0;
+//			获取出生时间
+			
+			
+			
+			
+			
+			if(z==year){}
+			else{
+			if(y==1||y==3||y==5||y==7||y==8||y==10||y==12){
+				d=32-x;
+			}else if(y==2){if(z%4==0&&z%100!=0 || z%400==0){d=30-x;}else{d=29-x}
+			}else{d=31-x;}
+			//出生那个月的天数
+			
+			for(++y;y<=12;y++){
+				if(y==3||y==5||y==7||y==8||y==10||y==12){
+					d=d+31;
+				}else if(y==2){
+					if(z%4==0&&z%100!=0 || z%400==0){d=d+29;}else{d=d+28;}}
+				else{d=d+30;}
+			}
+			}
+			//出生那一年的生活时间
+			
+			
+			for(++z;z<2019;z++){
+				if(z%4==0&&z%100!=0 || z%400==0){d=d+366;}
+				else{d=d+365;}
+			}
+//			今年以前生活的时间
+
+			for(++b;b<2;b++){
+				if(b==1||b==3||b==5||b==7||b==8||b==10||b==12){
+				d=d+31;
+			}else if(b==2){if(year%4==0&&year%100!=0 || year%400==0){d=d+29;}else{d=d+28;}
+			}else{d=d+30;}
+			}
+			d=d+day;
+
+			document.write("亲,您已经来到这个美丽的世界"+  d+"天了哦^_^")
+//			document.write(year,month,day)
+			}
+		</script>
+	</body>
+
+</html>
